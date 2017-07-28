@@ -3,6 +3,7 @@ build:
 	apt-get update -y
 	apt-get upgrade -y
 	apt-get install -y build-essential
+	echo "run make node, nginx, gethub"
 
 nginx:
 	apt-get install -y nginx 
@@ -128,12 +129,18 @@ getssh:
 	sudo systemctl restart sshd.service
 
 getsshkey:
-	ssh-keygen -t rsa
+	ssh-keygen -t rsa 4096 -C "formerastronaut@gmail.com"
 	#ssh-copy-id 
 	#chmod 600 .ssh/authorized_keys
+	echo "run make addsshkey"
+
+addsshkey:
+	#eval $(ssh-agent -s)
+	ssh-add ~/.ssh/id_rsa
+	nano ~/.ssh/id_rsa
 
 customizebash:
 	#figure out how to add my own styles to the bash configuration files (user) from makefile
 
 
-.PHONY: build node getgit gethub addusers firewall getssh getsshkey customizebash
+.PHONY: build node nginx getgit gethub addusers firewall getssh getsshkey customizebash addsshkey
