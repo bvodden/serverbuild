@@ -47,6 +47,10 @@ node:
 	#npm install
 	#forever start index.js 80
 	#forever list
+	npm completion >> ~/.bashrc
+	source ~/.bashrc
+	npm install -g npm
+	npm rebuild
 
 
 
@@ -55,7 +59,7 @@ getgit:
 	apt-get update
 	apt-get install git -y
 	git config --global user.name "Bryan Vodden"
-	git config --global user.email "formerastronaut@gmail.com"
+	git config --global user.email "bryanvodden@gmail.com"
 	git config --list
 	echo "type gethub to complete installation."
 
@@ -87,6 +91,21 @@ gitlocal:
 
 	#Fix permissions
 	sudo chown -R git:git /home/git/
+
+getgists:
+	#NOT CURRENT OR CORRECT OR COMPLETE IN ANY WAY. DO NOT USE 
+	mkdir ~/dev/gists
+	cd ~/dev/gists
+	mkdir server
+	mkdir server/node
+	mkdir app/browserify
+	mkdir html
+	mkdir js
+	mkdir css 
+	sudo gem install gist -v 4.6.1
+	sudo cp /var/lib/gems/2.3.0/gems/gist-4.6.1/bin/gist /usr/bin/gist
+
+
 
 addusers:
 	#adduser git
