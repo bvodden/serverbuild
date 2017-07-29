@@ -16,11 +16,15 @@ nginx:
 
 
 node:
-	cd ~/
+	mkdir ~/.node-setup
+	cd ~/.node-setup
 	apt-get update -y
 	apt-get upgrade -y
 	curl -sL https://deb.nodesource.com/setup_6.x | bash -
 	apt-get install nodejs -y
+	#this script will update permissions and allow npm global install without sudo
+	wget -O- https://raw.githubusercontent.com/glenpike/npm-g_nosudo/master/npm-g-nosudo.sh | sh
+	source ~/.bashrc
 	npm update -g
 	npm i -g browserify grunt grunt-cli gulp cordova forever watchify bower express n
 	npm i create-react-app --global
@@ -29,12 +33,12 @@ node:
 	n 8.0.0
 	npm install standard --global
 	#npm install -g @angular/cli
-	npm install branch-diff --g buillobal
+	#npm install branch-diff --g buillobal
 	npm install nodemon --global
 	npm install -g grunt-init
 	#npm install now --global
 	npm install jshint --global
-	npm insall pug-cli --global
+	npm install pug-cli --global
 	npm install npm --global
 	npm config set init.author.name "bryanVodden"
 	npm config set init.author.email bryanvodden@gmail.com
@@ -48,7 +52,7 @@ node:
 	#npm install
 	#forever start index.js 80
 	#forever list
-	npm completion >> ~/.bashrc
+	napm completion >> ~/.bashrc
 	source ~/.bashrc
 	npm install -g npm
 	npm rebuild
