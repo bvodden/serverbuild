@@ -52,7 +52,7 @@ node:
 	#npm install
 	#forever start index.js 80
 	#forever list
-	napm completion >> ~/.bashrc
+	npm completion >> ~/.bashrc
 	source ~/.bashrc
 	npm install -g npm
 	npm rebuild
